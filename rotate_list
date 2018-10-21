@@ -1,0 +1,27 @@
+def rotate(arr, k):
+    """
+    Given a list of integers, rotate to the right by k steps, where k is non-negative.
+    Needs to be updated to be more efficient.
+    :param arr: list of integers
+    :param k: number to rotate by
+    :return: rotated list
+    """
+    rotated = []
+    for i in arr:  # make new list same size as input list
+        rotated.append(0)
+    index = 0  # to keep track of where we are in the list
+    for i in arr:  # for each item in input list
+        if index + k < len(arr):
+            rotated[index] = arr[index + k]
+        else:
+            rotated[index] = arr[index - (len(arr) - k)]
+        index += 1
+
+    return rotated
+
+
+def main():
+    print(rotate([6, 3, 4, 2, 5], 2))
+
+
+main()
