@@ -1,0 +1,18 @@
+def sum_digits(x):
+    """
+    Sums digits of any positive integer using recursion.
+    :param x: A positive integer.
+    :return:
+    """
+    x = str(x)
+    if len(x) == 1:   # base case if number has one digit
+        return int(x)
+    else:
+        return sum_digits(str(int(x[0]) + int(x[1])) + x[2:])  # adds first two digits
+
+
+def main():
+    print(sum_digits(1135))
+
+
+main()
